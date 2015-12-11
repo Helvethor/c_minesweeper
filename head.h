@@ -18,6 +18,7 @@ int check(GRID * grid);
 void end(int * nb_dug);
 void win(struct tm * duration, int size);
 void lose(void);
+void reset(void);
 
 // DISPLAY
 
@@ -26,6 +27,7 @@ void show_border_h(int size, int tabs);
 void show_border_v(int i, int max, int tabs);
 void print_tabs(int tabs);
 void show_scores(void);
+void show_board(char file_name[32]);
 void show_case(CASE * this_case);
 void show_all_cases(GRID * grid);
 void help_main(void);
@@ -35,7 +37,7 @@ void help_play(void);
 
 void init_grid(GRID * grid);
 void inc_values(GRID * grid, int x, int y);
-void init_files(char file_name[32]);
+void init_file(char file_name[32]);
 
 
 // INPUT
@@ -45,6 +47,7 @@ int get_difficulty(void);
 int get_int(void);
 int get_size(void);
 void get_yn(char entry[32]);
+void get_board(char entry[32]);
 
 
 // FILE

@@ -85,3 +85,12 @@ void get_yn(char entry[32]){
 		get_entry(entry);
 	} while (strcmp(entry, "yes") && strcmp(entry, "no"));
 }
+
+
+void get_board(char entry[32]){
+
+	do {
+		printf(" # Choose the board : leaders, recent\n > ");
+		get_entry(entry);
+	} while (strcmp(entry, "recent") && strcmp(entry, "leader"));
+}

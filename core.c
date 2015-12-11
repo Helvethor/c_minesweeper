@@ -178,3 +178,13 @@ void end(int * dug){
 	if (entry[0] == 'y')
 		*dug = -1;
 }
+
+
+void reset(void){
+	
+	char file_name[32];
+	
+	printf(" # Enter the name of the file to reset\n > ");
+	get_entry(file_name);
+	init_file(file_name);
+}

@@ -81,6 +81,33 @@ void print_tabs(int tabs){
 
 
 void show_scores(void){
+	
+	char entry[32], leader_file[32];
+	int size = 0;
+
+	get_board(entry);
+
+	if (entry[0] == 'l'){
+		printf(" # Choose the category to show (IE width of the board)\n > ");
+		size = get_int();
+		sprintf(leader_file, "leader_board_%d", size);
+		show_board(leader_file);
+	}
+	else
+		show_board("recent_players");
+}
+
+
+void show_board(char file_name[32]){
+
+	int i = 0;
+	PLAYER ** players = load(file_name);
+
+	for (i = 0; i < 0; i++){
+		if (players[i]->name[0] != '\0'){
+			printf("%s\t%d\t%d:%d:%d\n", players[i]->name, players[i]->size, players[i]->time.hour, players[i]->time.min, players[i]->time.sec);
+		}
+	}
 
 }
 

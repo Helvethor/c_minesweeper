@@ -52,11 +52,12 @@ void inc_values(GRID * grid, int y, int x){
 }
 
 
-void init_files(char file_name[32]){
+void init_file(char file_name[32]){
 	
 	int i = 0;
 	
-	PLAYER blank = {.name = "", .time = {0,0,0,0,0,0,0,0,0}, .size = 0};
+	struct tm time;
+	PLAYER blank = {.name = "", .time = time, .size = 0};
 	PLAYER ** noobs = malloc(10 * sizeof(PLAYER *));
 
 

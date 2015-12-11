@@ -16,7 +16,9 @@ int main(void){
 			play();
 		else if (!strcmp(entry, "scores"))
 			show_scores();
-		else if (!strcmp(entry, "help"))
+		else if (!strcmp(entry, "reset"))
+			reset();
+		else
 			help_main();
 
 	} while (strcmp(entry, "quit"));
