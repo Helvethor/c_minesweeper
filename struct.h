@@ -14,14 +14,15 @@ typedef struct {
 typedef struct{
 	int size;
 	CASE ** cases;
-	CASE ** bombs;
+	int nb_safe;
 	int nb_bombs;
-	CASE ** normals;
-	int nb_normals;
+	int nb_dug;
+	int nb_marked;
 } GRID;
 
 typedef struct{
 	char name[32];
-	int time;
+	struct tm time;
 	int size;
 } PLAYER;
+

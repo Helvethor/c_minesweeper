@@ -11,6 +11,12 @@ void get_entry(char entry[32]){
 
 int get_difficulty(){
 	
+	/*
+	 * Easy : 10% of bombs
+	 * Medium : 20% of bombs
+	 * Hard : 30% of bombs
+	 */
+
 	char entry[32];
 
 	do{
@@ -28,14 +34,36 @@ int get_difficulty(){
 	return 1;
 }
 
-int get_size(){
+
+int get_int(void){
+
+	int value = 0;
+	char c;
+	while (isdigit((c = getchar()))){
+		value *= 10;
+		value += c - '0';
+	}
+
+	return value;
+}
+
+
+int get_size(void){
 	
+	/*
+	 * Small : 8x8
+	 * Medium : 12x12
+	 * Large : 16x16
+	 * Custom
+	 */
+
+
 	char entry[32];
 
 	do{
-		printf(" # Choose size : small, medium, large\n > ");
+		printf(" # Choose size : small, medium, large, custom\n > ");
 		get_entry(entry);
-	} while (strcmp(entry, "small") && strcmp(entry, "medium") && strcmp(entry, "large"));
+	} while (strcmp(entry, "small") && strcmp(entry, "medium") && strcmp(entry, "large") && strcmp(entry, "custom"));
 
 	if (entry[0] == 's')
 		return 8;
@@ -43,6 +71,17 @@ int get_size(){
 		return 12;
 	else if (entry[0] == 'l')
 		return 16;
+	else
+		return get_int();
 
 	return 8;
+}
+
+
+void get_yn(char entry[32]){
+
+	do {
+		printf(" # Choices : yes, no\n > ");
+		get_entry(entry);
+	} while (strcmp(entry, "yes") && strcmp(entry, "no"));
 }
